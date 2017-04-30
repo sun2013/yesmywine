@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<script src="../lib/jquery-3.1.1.min.js" type="text/javascript" charset="utf-8"></script>
+	<body>
+	</body>
+	<script type="text/javascript">
+		$.ajax({
+			type:"get",
+			url:"http://127.0.0.1:3000/v1/banner",
+			async:true,
+			success:function(data){
+				console.log(data)
+			}
+		});
+	</script>
+</html>

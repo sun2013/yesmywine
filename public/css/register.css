@@ -1,0 +1,35 @@
+*{margin: 0;padding: 0;}
+body,html{height: 100%;font-size: 12px;background: #ffffff;font-family: "微软雅黑";}
+img{vertical-align: middle;}
+.clear:after{content: "";height: 0;visibility: hidden;overflow: hidden;display: block;clear: both;}
+.fl{float: left;}
+.fr{float: right;}
+.wrap{margin: 0 auto;}
+.container{width: 100%;}
+a{text-decoration: none;}
+ul,li{list-style: none;}
+/****************************************logo********************************************/
+.logo{border-bottom: 2px solid #BC0E31;}
+.logo .logo_main{width: 1200px;height: auto;overflow: hidden;margin: 0 auto;padding: 20px 0px;}
+
+/****************************************register********************************************/
+.register{overflow: hidden;margin: 0 auto;padding: 20px 0;width: 1200px;height: auto;}
+.register .register_main .register_left{padding: 20px 10px;width: 378px;border: 1px solid #d2d2ce;background: #f8f8f5;}
+.register .register_main .register_left h3{margin: 0 12px 18px 12px;padding-bottom: 15px;border-bottom: 1px solid #d2d2ce;text-align: left;font-size: 14px;}
+.register .register_main .register_left form p{padding: 7px 0;clear: both;height: 59px;position: relative;}
+.register .register_main .register_left form span{height: 20px;position: absolute;bottom: 0;width: 270px;left: 90px;background: url(../logo_img/icon_error.gif)no-repeat 0 center;text-indent:  20px;color: red;line-height: 20px;display: none;}
+.register .register_main .register_left form p i{font-style: normal;float: left;width: 90px;height: 38px;color: #363636;text-align: right;font-size: 14px;line-height: 38px;}
+.register .register_main .register_left form input{padding: 0 5px;width: 270px;height: 38px;color: #666;font-size: 12px;line-height: 38px;float: left;border: 0;border-left: 2px solid #9a9a9a;border-top: 2px solid #9a9a9a;border-bottom: 2px solid #eeeeee;border-right: 2px solid #eeeeee;outline: none;}
+.register .register_main .register_left form #vip{width: 14px;height: 14px;margin-left: 90px;margin-right: 5px;}
+
+.register .register_main .register_left form #yanzhengma{width: 165px;}
+.register .register_main .register_left form #rules{width: 14px;height: 14px;margin-left: 90px;margin-right: 5px;}
+.register .register_main .register_left form #reg{display: block;margin-right: 0;margin-left: 10px;width: 355px;height: 45px;line-height: 45px;text-align: center;border: 0;background: #bb0e30;color: #fff;font-weight: bold;font-size: 16px;cursor: pointer;}
+.register .register_main .register_left .check_box{height: 20px;}
+.register .register_main .register_right{position: relative;overflow: hidden;width: 790px;height: 480px;background: url(../logo_img/register_ads.jpg) no-repeat;}
+/****************************************footer********************************************/
+.footer{width: 100%;text-align: center;border-top: 1px solid #ccc;margin-top: 30px;padding-bottom: 20px;}
+
+
+
+

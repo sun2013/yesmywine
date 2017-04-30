@@ -1,0 +1,8 @@
+<dl style="height: 297px;width: 181px;border: 2px solid #e5e5e5;float: left;margin-right: 10px;">
+	<dt style="height: 200px;width: 181px;background: #fff;text-align: center;"><img style="vertical-align: middle;"  src="图片路径"/><span style="display: inline-block;height: 200px;width: 0;vertical-align: middle;"></span></dt>
+	<dd style="background: #f4f4f0;height: 97px;width: 181px;">
+		<p style="font-size: 12px;width: 160px;margin: 0 auto;padding-top: 24px;color: #5b473d;text-overflow: ellipsis;overflow: hidden;white-space: nowrap;">商品名称</p>
+		<span style="color: #c53f4c;text-indent: 10px;display:  block;">￥:商品价格</span>
+		<span style="display: block;height: 20px;background: #fff;margin-top: 5px;border-top: 2px solid #e5e5e5;font-size: 12px;line-height: 20px;color: #bbbbbb;text-indent: 10px;">售出:商品访问量</span>
+	</dd>
+</dl>

@@ -1,0 +1,17 @@
+<div style="float: left;overflow: hidden;width: 298px;height: 186px;border: #ebebe8 1px solid;border-top: 0;border-left: none;background: #fff;color: #777;position: relative;">
+			<a href="#" style="color: #333;text-decoration: none;outline: none;cursor: pointer;"> 
+				<img style="float: left;display: inline;margin: 25px 4px;height: 140px;" src="图片路径"></a>
+			<dl style="width: 180px;float: left;overflow: hidden;margin-top: 20px;width: 175px;max-height: 130px;">
+				<dt style="color: #633;"><a href="#">商品名称</a></dt>
+				<dd style="overflow: hidden;min-height: 18px;max-height: 36px;line-height: 18px;">英文名</dd>
+				<dd style="overflow: hidden;min-height: 18px;max-height: 36px;line-height: 18px;">产地：国籍</dd>
+				<dd style="overflow: hidden;min-height: 18px;max-height: 36px;line-height: 18px;">品种：种类</dd>
+				<dd style="overflow: hidden;min-height: 18px;max-height: 36px;line-height: 18px;">好评度：商品好评度</dd>
+				<dd style="height: 25px;margin-top: 5px;position: absolute;bottom: 11%;">
+					<div class="minprice">
+						<span class="fuhao">¥</span>
+						<strong>商品价格.0</strong>
+					</div>
+				</dd>
+			</dl>
+		</div>

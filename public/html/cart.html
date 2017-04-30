@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="../css/common.css" />
+		<link rel="stylesheet" type="text/css" href="../css/cart.css" />
+		<script src="../js/jquery-1.12.4.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/jquery.cookie.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			$(function() {
+				$.cookie.json = true;
+				var users = $.cookie("users");
+				if(users) {
+					if(users.username) {
+						username = users.username;
+						$("#users").html("<a href = 'javascript:void(0)'>您好" + username + "</a><a class ='tuichu' href = 'javascript:void(0)'>退出</a>");
+						$(".tuichu").on("click", function() {
+							$.cookie("users", "");
+							$("#users").html("<a href='html/logo.html' style='float: left;border-right: 1px solid;padding-right: 11px;color:#85726c ;'>登陆</a><a href='html/register.html' style='float: left;margin-left: 9px;color: #85726c;'>注册</a>")
+						})
+					}
+				}
+				$("#zhanghu").hover(function() {
+					$("#dingdan").show().find("li").css({
+						float: "none"
+					}).hover(function() {
+						$(this).css({
+							background: "#a11011"
+						}).siblings().css({
+							background: "#fff"
+						})
+					});
+				}, function() {
+					$("#dingdan").hide();
+					//						$(".menu_1").hide();
+				});
+				$.when($.ajax("../css/goods.html")).done(function(data) {
+					$.cookie.json = true;
+					var good_html = "";
+					var good_num = 0;
+					var cookie = $.cookie("users");
+
+					if(!cookie || cookie.products == undefined || cookie.products.length == 0) {
+						$(".good").html("还没有商品哟，快去购物吧，返回" + "<a href = 'products.html'> 首页 </a>");
+					} else {
+						cart_num();
+						var element = cookie.products;
+						for(var i in element) {
+							good_html += data.replace("商品名称", element[i].name)
+								.replace("商品路径", element[i].img)
+								.replace("商品数量", element[i].amount)
+								.replace("商品价格", element[i].price)
+								.replace("商品小计", element[i].amount * element[i].price)
+						}
+						$(".good").html(good_html);
+						$(".minus").on("click", function() {
+							var value = parseInt($(this).siblings("input").val());
+							//							console.log(typeof value)
+							if(value == 1) {
+								return;
+							}
+							value -= 1;
+							$(this).siblings("input").val(value);
+							var index = $(this).parents(".cart_a").index();
+							element[index].amount = value;
+							$.cookie("users", cookie, {
+								expires: 7,
+								path: "/"
+							});
+							cart_num();
+							good_price = parseInt($(this).siblings("input").val()) * parseInt($(this).parent().parent().siblings(".dj_price").find("b").text());
+							$(this).parent().parent().siblings(".xj_price").find("b").text(good_price);
+
+							//							$(this).parent().parent(".xj_price").find("b").text(good_price);
+							//						console.log($.cookie("users"))
+						})
+						$(".editAmount").on("blur", function() {
+							var index = $(this).parents(".cart_a").index();
+							element[index].amount = $(this).val();
+							$.cookie("users", cookie, {
+								expires: 7,
+								path: "/"
+							});
+							cart_num();
+						})
+						$(".add").on("click", function() {
+							var value = $(this).siblings("input").val();
+							value++;
+							$(this).siblings("input").val(value);
+							var index = $(this).parents(".cart_a").index();
+							element[index].amount = value;
+							$.cookie("users", cookie, {
+								expires: 7,
+								path: "/"
+							});
+							cart_num();
+							good_price = parseInt($(this).siblings("input").val()) * parseInt($(this).parent().parent().siblings(".dj_price").find("b").text());
+							$(this).parent().parent().siblings(".xj_price").find("b").text(good_price);
+							console.log()
+								//						console.log($.cookie("users"))
+						})
+						$(".good_remove").on("click", function() {
+							var index = $(this).parents(".cart_a").index();
+							$(this).parents(".cart_a").remove();
+							element.splice(index, 1);
+							cart_num();
+							$.cookie("users", cookie, {
+								expires: 7,
+								path: "/"
+							});
+							if(element.length === 0) {
+								$(".good").html('你还没有商品哟,快去购物吧！<a href="products.html">商品页</a>挑选')
+							}
+						})
+
+						function cart_num() {
+							var good_num = 0;
+							var good_prices = 0;
+							var good_price = 0
+							for(var attr in cookie.products) {
+								good_num += parseInt(cookie.products[attr].amount);
+								good_prices += parseInt(cookie.products[attr].amount) * parseInt(cookie.products[attr].price);
+							}
+							$(".cart_tit").find("b").text(good_num);
+							$(".foot1").children("strong").text(good_num);
+							$(".foot2").children("strong").text(good_prices);
+						}
+						/*	var _index = [];*/
+						/*$(".good_select").on("click",function(){
+							check();
+						});*/
+
+						$("#checkbox").on("click", function() {
+							var status = $(this).prop("checked");
+							$(".good_select").prop("checked", status);
+						});
+						var _index = [];
+						/*console.log($(".good_select:checked"))
+						$(".good_select:checked").each(function(i,ele){
+							console.log(i,ele)
+						})*/
+						$(".shanchu").on("click", function() {
+								//							_index.push($(this).parents(".cart_a").index());
+								$(".good_select:checked").each(function(i) {
+									_index.push($(this).parents(".cart_a").index());
+									//								element.splice(i,1)
+								})
+								_index.reverse();
+								console.log(_index)
+								for(var i in _index) {
+									element.splice(_index[i], 1)
+								}
+								cart_num();
+								$.cookie("users", cookie, {
+									expires: 7,
+									path: "/"
+								});
+								$(".good_select:checked").parents(".cart_a").remove();
+								_index = [];
+								if(!cookie || cookie.products == undefined || cookie.products.length == 0) {
+									$(".good").html("还没有商品哟，快去购物吧，返回" + "<a href = 'products.html'> 首页 </a>");
+								}
+							})
+							/*var _index = [];
+							function check(){
+								$(".good_select:checked").each(function(i){
+									_index.push($(this).parents(".cart_a").index())
+								
+								})
+								console.log(_index)
+								return _index;
+							}*/
+					}
+				});
+			})
+		</script>
+	</head>
+
+	<body>
+		<div class="header">
+			<div style="height: 18px;width: 960px;margin: 0 auto;padding-top: 6px;padding-bottom: 6px;">
+				<div style="float: left;margin-right: 22px;"><span style="float: left;color: #c5404c;">9784595 </span> 位会员的选择</div>
+				<div id="users">
+					<a href="logo.html" style="float: left;border-right: 1px solid;padding-right: 11px;color:#85726c ;">登陆</a>
+					<a href="register.html" style="float: left;margin-left: 9px;color: #85726c;">注册</a>
+				</div>
+				<ul style="float: right;">
+					<li>
+						<a href="#">会员俱乐部</a>
+					</li>
+					<li>
+						<a href="#">签到</a>
+					</li>
+					<li id="zhanghu" style="position: relative;">
+						<a href="#">我的账户</a><em class="zhanghu"></em>
+						<ul id="dingdan" style="display: none;position: absolute;top: 20px;background: #fff;width: 100px;box-shadow: 3px 3px 5px;">
+							<div style="position:relative;width:100px;height:8px"><em class="up"></em></div>
+							<li>我的订单</li>
+							<li>我的存酒库</li>
+							<li>我的优惠券</li>
+							<li>我的收藏夹</li>
+						</ul>
+					</li>
+					<li>
+						<a href="#">手机版</a><em class="phone"></em></li>
+					<li>
+						<a href="#">红酒交易中心</a>
+					</li>
+					<li>
+						<a href="#">也卖服务</a><em class="ser"></em></li>
+					<li style="border: 0;">
+						<a href="#">设置勿扰</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<div style="width: 100%;border-bottom: solid 2px #7e0001;margin-bottom: 20px;background: #F1EEED;">
+			<div class="header_main clear">
+				<div class="header_logo fl">
+					<a href="../index.html"></a>
+				</div>
+				<div class="header_logo_right fr">
+				</div>
+			</div>
+		</div>
+		<div class="cart_main wrap">
+			<div class="cart_list">
+				<h1>
+					<p><font>温馨提示：</font>也买商城订单可以合并下单啦。无论您的购物车里有几家也买商家的商品都可以合并成一张订单付款。</p>
+					<i></i>
+					
+				</h1>
+				<ul>
+					<li>
+						<div class="cart_tit clear">
+							<h2>由也买酒配送</h2>
+							<span><b>0</b><i></i></span>
+						</div>
+						<div class="cart_cont">
+							<div class="cart_t">
+								<table border="0" cellspacing="0" cellpadding="0" width="100%">
+									<tr>
+										<td height="34" width="12%">
+											<input class="fl" type="checkbox" name="checkbox" id="checkbox" value="" /><label for="checkbox" class="fl">全选</label>
+											<a class="shanchu" href="javascript:void(0)"> 删除选中</a>
+										</td>
+										<td>商品名称</td>
+										<td width="13%">单价</td>
+										<td width="13%">数量</td>
+										<td width="13%">小计</td>
+										<td width="13%">&nbsp;</td>
+									</tr>
+								</table>
+								<div class="good"></div>
+							</div>
+						</div>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<div class="foot">
+			<ul>
+				<li class="foot1">商品数量：<strong>0</strong><b>件</b></li>
+				<li class="foot2">应付金额：<strong>0</strong><b>(不含运费)</b></li>
+				<li class="foot3">
+					<a href="money.html">去结算</a>
+				</li>
+			</ul>
+		</div>
+
+	</body>
+
+</html>

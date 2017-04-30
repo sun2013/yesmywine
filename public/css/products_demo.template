@@ -1,0 +1,26 @@
+<div class="products_product clear">
+			<a class="product_img" href="javascript:void(0)"><img src="../商品路径"/></a>
+			<div class="prod_info">
+				<h3><a href="javascript:void(0)"><b class = "pr_name">商品名称</b><span>英文名</span></a></h3>
+			</div>
+			<p class="prod_price"><span>
+								抢购价：
+								<strong>商品价格</strong>元<em>商品折扣</em>折</span></p>
+			<p class="qianggou"><a class="products_qg" href="javascript:void(0)">立刻抢购</a></p>
+			<p class="qianggou1"><a class="products_qg1" href="javascript:void(0)">加入购物车</a></p>
+			<p class="products_time">剩余时间<span><strong class = "product_day"></strong><b>天</b><strong class="product_hour" ></strong><b>时</b><strong class="product_minute"></strong><b>分</b><strong class="product_second"></strong><b>秒</b></span></p>
+			<div class="product_com">
+				<span class="product_fir">
+					<strong>商品出售</strong><br />
+								近期售出
+							
+				</span>
+				<span class="product_sec"><a href="javascript:void(0)"><strong>商品评论</strong><br />
+								评论
+							</a></span>
+				<span class="product_thir">
+								<strong>商品好评率</strong><br />
+								好评率
+							</span>
+			</div>
+		</div>

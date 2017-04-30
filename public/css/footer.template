@@ -1,0 +1,101 @@
+<div class="footer">
+			<div class="footer_main wrap clear">
+				<div class="foot1">
+					<h2>也买酒承诺</h2>
+					<a class="zp" href="javascript:void(0)"><h3>正品保障</h3></a>
+					<a class="th" href="javascript:void(0)"><h3>30天退换货</h3></a>
+					<a class="hw" href="javascript:void(0)"><h3>恒温恒湿仓</h3></a>
+					<a class="yf" href="javascript:void(0)"><h3>免运费</h3></a>
+					<a class="mf" href="javascript:void(0)"><h3>慢就返</h3></a>
+				</div>
+				<div class="foot2 fl">
+					<ul>
+						<li>
+							<h4>购物指南</h4>
+							<p><a href="javascript:void(0)">货到付款</a>
+								<a href="javascript:void(0)">在线支付</a>
+								<a href="javascript:void(0)">银行转帐</a>
+								<a href="javascript:void(0)">发票制度</a>
+							</p>
+						</li>
+						<li>
+							<h4>支付帮助</h4>
+							<p><a href="javascript:void(0)">货到付款</a>
+								<a href="javascript:void(0)">在线支付</a>
+								<a href="javascript:void(0)">银行转帐</a>
+								<a href="javascript:void(0)">发票制度</a>
+							</p>
+						</li>
+						<li>
+							<h4>专业特色</h4>
+							<p><a href="javascript:void(0)">存酒库</a>
+								<a href="javascript:void(0)">酒类交易中心</a>
+								<a href="javascript:void(0)">全国门店分布</a>
+								<a href="javascript:void(0)">香港免税</a>
+								<a href="javascript:void(0)">期酒交易</a>
+								<a href="javascript:void(0)">I酒窖</a>
+							</p>
+						</li>
+						<li>
+							<h4>物流配送</h4>
+							<p><a href="javascript:void(0)">150元免运费</a>
+								<a href="javascript:void(0)">配送范围</a>
+								<a href="javascript:void(0)">慢就返</a>
+
+							</p>
+						</li>
+						<li>
+							<h4>关于我们</h4>
+							<p><a href="javascript:void(0)">关于也买酒</a>
+								<a href="javascript:void(0)">联系我们</a>
+								<a href="javascript:void(0)">媒体聚焦</a>
+								<a href="javascript:void(0)">隐私声明</a>
+								<a href="javascript:void(0)">4008208060</a>
+							</p>
+						</li>
+						<li>
+							<h4>招商合作</h4>
+							<p><a href="javascript:void(0)">经销商招募</a>
+								<a href="javascript:void(0)">连锁店招募</a>
+								<a href="javascript:void(0)">也买联盟</a>
+								<a href="javascript:void(0)">企业采购</a>
+							</p>
+						</li>
+						<li>
+							<h4>也买酒APP下载</h4>
+							<p>
+								<span>下载也买酒APP</span>
+								<span>每月18手机购酒节精彩不错过</span>
+								<h4>也买酒官方微信</h4>
+							</p>
+							<p>
+								<span>关注微信、劲爆优惠触手可得！</span>
+							</p>
+							<p id="saomiao"></p>
+						</li>
+						
+					</ul>
+				</div>
+				<div class="foot3 fl">
+					<div class="mobile clear">
+						<a class="app" href="javascript:void(0)"></a>
+						<a class="android" href="javascript:void(0)"></a>
+					</div>
+					<dl>
+						<dt></dt>
+						<dd><p>
+						</p></dd>
+					</dl>
+				</div>
+			</div>
+			<div class="foot_nav">
+				<a href="javascript:void(0)">关于也买酒</a><span>|</span>
+				<a href="javascript:void(0)">联系我们</a><span>|</span>
+				<a href="javascript:void(0)">媒体聚焦</a><span>|</span>
+				<a href="javascript:void(0)">诚招英才</a><span>|</span>
+				<a href="javascript:void(0)">隐私声明</a>
+			</div>
+			<div class="foot_link">
+				<a href="javascript:void(0)"></a>
+			</div>
+		</div>

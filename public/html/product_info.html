@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<link rel="stylesheet" type="text/css" href="../css/common.css" />
+		<link rel="stylesheet" type="text/css" href="../css/products_info.css" />
+		<script src="../js/jquery-1.12.4.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/jquery.cookie.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			$(function() {
+				$.get("../css/header.template?callback=?", function(data) {
+					$(".header").html(data);
+					$.cookie.json = true;
+					var users = $.cookie("users");
+					if(users) {
+						if(users.username) {
+							username = users.username;
+							$("#users").html("<a href = 'javascript:void(0)'>您好" + username + "</a><a class ='tuichu' href = 'javascript:void(0)'>退出</a>");
+							$(".tuichu").on("click", function() {
+								$.cookie("users", "");
+								$("#users").html("<a href='html/logo.html' style='float: left;border-right: 1px solid;padding-right: 11px;color:#85726c ;'>登陆</a><a href='html/register.html' style='float: left;margin-left: 9px;color: #85726c;'>注册</a>")
+							})
+						}
+					}
+					$(".nav").css({
+						background: "#7e0001"
+					})
+					$(".menu").css({
+						background: "#4a3931"
+					});
+					$(".ul_2").css({
+						background: "#624b40"
+					});
+					$(".menu_1").find("a").css({
+						color: "#b8a199"
+					});
+					$(".ul1").css({
+						background: "#624b40",
+					})
+					$("#zhanghu").hover(function() {
+						$("#dingdan").show().find("li").css({
+							float: "none"
+						}).hover(function() {
+							$(this).css({
+								background: "#a11011"
+							}).siblings().css({
+								background: "#fff"
+							})
+						});
+					}, function() {
+						$("#dingdan").hide();
+						//						$(".menu_1").hide();
+					});
+					$(".ul1").hover(function() {
+						$(this).css({
+							background: "#624b40"
+						}).find(".menu_2").stop().show().animate({
+							left: 200,
+							opacity: 0.9
+						}).end().siblings().find(".menu_2").css({
+							left: 0,
+							opacity: 0
+						}).hide();
+					})
+					$(".menu").hover(function() {
+						$(".menu_1").show();
+					}, function() {
+						$(".menu_1").hide().find(".menu_2").hide();
+					})
+
+				});
+				var hour = 0,
+					minutes = 0,
+					d = 0,
+					n = 0
+				second = 0;
+				setInterval(function() {
+					d = new Date("2016/11/20 00:00:00")
+					n = new Date()
+					n = d - n;
+					day = Math.floor(n / 1000 / 60 / 60 / 24);
+					hour = Math.floor(n / 1000 / 60 / 60 % 24);
+					minutes = Math.floor(n / 1000 / 60 % 60)
+					second = Math.floor(n / 1000 % 60);
+					$(".product_day").html(day);
+					$(".product_hour").html(hour);
+					$(".product_minute").html(minutes);
+					$(".product_second").html(second);
+				}, 1000);
+				$.cookie.json = true;
+				var promo = $.cookie("product");
+				//				console.log(promo.zhekou)
+				$(".promo_pic").attr({
+					src: promo.src
+				});
+				$(".promo_name").text(promo.name);
+				$(".promo_name1").text(promo.english)
+				$(".pro_icon").text(promo.zhekou + ".6折");
+				$(".chusou").text(promo.amount);
+				$(".promo_price").text(promo.price)
+				$(".promo_ppp").find("em").text(promo.zhekou)
+				$(".promo_left").hover(function() {
+					$(this).css("cursor", "crosshair").on("mousemove", function(e) {
+						$(".promo_sun1").show();
+						$(".promo_sun").show().offset({
+							left: e.pageX - $(".promo_sun").width() / 2,
+							top: e.pageY - $(".promo_sun").height() / 2
+						});
+						var promo_curr = $(".promo_sun").position(),
+							_top = promo_curr.top,
+							_left = promo_curr.left;
+						//						console.log(promo_curr)
+						if(_left <= 0) {
+							_left = 0;
+						}
+						if(_top <= 0) {
+							_top = 0;
+						}
+						if(_top >= $(".promo_left").height() - $(".promo_sun").height()) {
+							_top = $(".promo_left").height() - $(".promo_sun").height();
+						}
+						if(_left >= $(".promo_left").width() - $(".promo_sun").width()) {
+							_left = $(".promo_left").width() - $(".promo_sun").width();
+						}
+						$(".promo_sun").css({
+							left: _left,
+							top: _top
+						});
+						$(".promo_pic1").css({
+								left: -0.25 * _left,
+								top: -0.9 * _top
+							})
+							//						console.log(-1.89* _left)
+					});
+				}, function() {
+					$(this).css("cursor", "pointer")
+					$(".promo_sun").hide();
+					$(".promo_sun1").hide();
+				});
+			})
+		</script>
+		<title></title>
+	</head>
+
+	<body>
+		<div class="header">
+
+		</div>
+		<div class="pr_info wrap clear">
+			<div class="pr_top">
+				<a href="../index.html">首页</a> ＞
+
+				<a href="products.html">商品列表</a> ＞
+
+				<a href="products.html">红葡萄酒</a>
+			</div>
+			<p class="products_time">剩余时间<span><strong class = "product_day">00</strong><b>天</b><strong class="product_hour" >00</strong><b>:</b><strong class="product_minute">00</strong><b>:</b><strong class="product_second">00</strong><b></b></span></p>
+			<div class="promo wrap">
+				<div class="promo_left">
+					<img class="promo_pic" src="" />
+					<i class="pro_icon"></i>
+					<div class="promo_sun"></div>
+				</div>
+				<div class="promo_sun1"><img class="promo_pic promo_pic1" src="" /></div>
+				<div class="promo_right">
+					<h3 class="promo_name"></h3>
+					<h3 class="promo_name1"></h3>
+					<p>全世界十大酒庄之一的，西班牙“醉”大的FSA酒庄出品。甜美的水果和植物香气，口感纯正，单宁细致平衡。</p>
+					<dl class="fl">
+						<dt>商品评分：</dt>
+						<dd></dd>
+					</dl>
+					<p class="fl chushou">近期出售：<strong class="chusou"></strong></p><br /><br /><br /><br />
+					<ul class="clear">
+						<li><span>您的专享价：<b>￥<em class="promo_price"></em></b></span></li>
+					</ul>
+					<div class="promo_ppp">
+						<p>
+							促销折扣<em></em><i>折</i></p>
+					</div><br /><br /><br /><br /><br /><br />
+					<a class="liji" href="money.html"></a>
+				</div>
+			</div>
+		</div>
+		<div class="prod_link wrap">
+			<a href="javascript:void(0)"><img src="../logo_img/2016-11-11_215838.png" /></a>
+		</div>
+	</body>
+
+</html>

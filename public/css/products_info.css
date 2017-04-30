@@ -1,0 +1,44 @@
+html{background: #fbfaf9;}
+.pr_info{width: 1200px;}
+.pr_info .pr_top{width:1200px;margin: 10px auto 0;color: #666}
+.pr_info .pr_top a{color: #666;}
+.products_time{height: 30px;line-height: 30px;float: right;padding-left: 20px;color: #957a67;background: url(../img/icon.png) no-repeat -185px -30px;}
+.products_time strong{font: 24px/30px 'arial';color: #f60;}
+.products_time b{padding: 0 5px;}
+.promo{width: 960px;height: 500px;clear:both;position: relative;margin-top: 100px;}
+.promo .promo_left{width: 378px;height: 438px;float: left;position: relative;border: 1px solid #ccc;}
+.promo_pic {background: url(../logo_img/loading.gif)no-repeat center center;left: 79px;display: block;margin: 0 auto;padding: 39px 0;width: 220px;height: 360px;}
+.pro_icon{position: absolute;background: url(../img/new-icon.png)no-repeat -418px 0;margin-bottom: 5px;width: 50px;height: 45px;top: 10px;left: 10px;line-height: 45px;text-align: center;color: #fff;font-style: normal;font-size: 20px;}
+.promo_sun{width:150px;height: 300px;position: absolute;left: 0;top: 0;display: none;}
+.promo_sun1{width: 378px;height: 438px;position:absolute;left: 400px;top: 0;overflow: hidden;display: none;background: #fff;}
+.promo_pic1{position: absolute;left: 0;top: 0;width: 322px;height:525px;background: none;z-index:9999}
+.promo_right{width: 560px;height: 438px;margin-left: 400px;}
+.promo_right h3{display: block;margin-right: 10px;color: #000;font-weight: bold;font-size: 14px;line-height: 20px;height: 20px;margin-top: 20px;}
+.promo_right p{overflow: hidden;height: auto;color: #d73c3c;font-weight: bold;font-size: 14px;}
+.promo_right .chushou{margin-top: 20px;}
+.promo_right dl{float: left;width: 180px;height: 20px;margin-top: 20px;}
+.promo_right dl dt{float: left;margin: 0;padding: 0;width: 60px;color: #999;line-height: 20px;}
+.promo_right dl dd{width: 110px;height: 20px;background:url(../img/icon.png) -50px -87px;margin-left: 65px;}
+.promo_right ul{width: 560px;height: 56px;}
+.promo_right ul li{float: left;color: #999;line-height: 36px;height: 36px;position: relative;}
+.promo_right ul li b{color: #c00;margin-right: 10px;font-weight: normal;line-height: 30px;}
+.promo_right ul li b em{font-size: 36px;font-style: normal;}
+.promo_right .promo_ppp em{font-style: normal;margin: 0 3px;color: #666;font-weight: bold;font-size: 16px;}
+.promo_right .promo_ppp i{color: #999;font-style: normal;}
+.promo_right .promo_ppp p{float: left;padding: 0 25px;height: 50px;border: 1px solid #e6e1db;background: #fff;color: #927966;text-align: center;line-height: 50px;}
+.promo_right .liji{float: left;overflow: hidden;margin-right: 10px;width: 210px;height: 44px;background:url(../img/icon.png) 0 -368px;}
+
+
+
+.prod_link{width: 1200px;}
+.prod_link img{margin-left: 60px;}
+
+
+
+
+
+
+
+
+
+

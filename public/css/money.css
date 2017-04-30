@@ -1,0 +1,28 @@
+.header_main{width: 960px;margin: 0 auto;}
+.header_main a{width: 130px;height: 100px;float: left;background: url(../img/logo5.png)no-repeat left center;}
+.header_logo_right{width: 479px;height: 39px;margin: 30px 0;background: url(../img/cart_step.png) no-repeat left -60px;overflow: hidden;}
+
+
+.jiesuan{width: 960px;margin: 0 auto;margin-bottom: 50px;}
+.jiesuan h3{height: 39px;border-left: 2px solid #dddbd2;border-top: 2px solid #dddbd2;border-right: 2px solid #dddbd2;float: left;width: 120px;font-size: 14px;line-height: 39px;text-align: center;margin-bottom: -2px;z-index: 999;position: relative;background: #f8f8f5;font-weight: normal;	}
+.jiesuan h4{clear: both;font-size: 14px;height: 50px;line-height: 50px;border: 2px solid #dddbd2;padding: 20px 0 15px 20px;background: #f8f8f5;border-bottom: 1px dashed #dddbd2;font-weight: normal;}
+._address{border-bottom: 1px dashed #dddbd2;padding: 20px 0 20px 75px;position: relative;background:#f8f8f5;border: 2px solid #dddbd2;border-top: 0;}
+._address p b{color: #999;}
+._address p i{color: #B70513;margin-right: 5px;}
+._address p{height: 24px;line-height: 24px;margin-top: 5px;}
+._address em{float: left;font-style: normal;width: 70px;}
+._address .fukuan{width: 80px;background: #c53f4c;border: none;color: #fff;height: 24px;margin-top: 10px;margin-left: 70px;outline: none;margin-bottom: 10px;}
+.jiesuan h5{height: 25px;line-height: 25px;background: #f8f8f5;}
+#address_info {display:none;}
+
+.goods_list{width: 960px;margin: 0 auto;margin-bottom: 20px;}
+.goods_list h3{height: 39px;border-left: 2px solid #dddbd2;border-top: 2px solid #dddbd2;border-right: 2px solid #dddbd2;width: 120px;font-size: 14px;line-height: 39px;text-align: center;margin-bottom: -2px;z-index: 999;position: relative;background: #f8f8f5;font-weight: normal;}
+.goods_list ul{border: 2px solid #dddbd2;background: #f8f8f5;}
+.goods_list ul li{float: left;height: 39px;line-height: 39px;border-bottom: 0;}
+.goods_list ul ._li1{width: 500px;padding-left: 50px;}
+.goods_list ul ._li2{width: 130px;}
+.goods_list ul ._li3{width: 130px;}
+.goods_list ul ._li4{width: 130px;}
+.add_goods{width: 960px;margin:  0 auto;}
+.add_goods strong{color: red;font-size: 26px;}
+.add_goods a{float: right;padding: 10px;font-size: 20px;background: #c53f4c;color: #fff;}

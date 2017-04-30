@@ -1,0 +1,23 @@
+{
+  "name": "",
+  "version": "1.0.0",
+  "description": "也买酒数据API",
+  "main": "index.js",
+  "scripts": {
+    "prestart": "npm install",
+    "start": "node index.js"
+  },
+  "keywords": [
+    "swagger"
+  ],
+  "license": "Unlicense",
+  "private": true,
+  "dependencies": {
+    "connect": "^3.2.0",
+    "cookie-parser": "^1.4.3",
+    "express": "^4.15.2",
+    "js-yaml": "^3.3.0",
+    "node-mysql": "^0.4.2",
+    "swagger-tools": "0.10.1"
+  }
+}
